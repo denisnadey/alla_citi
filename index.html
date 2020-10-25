@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citikrasti</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="container-xxl">
+                <a class="navbar-brand" href="#"><img loading=lazy src="assets/images/logo.png" alt=""></a>
+                <button type="button" class="btn btn-primary  btn-lang dnonepc" data-toggle="modal" data-target="#exampleModal">
+                  <svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                     <g>
+                        <path d="m483.489 138.478c-18.047-34.863-44.348-65.608-76.06-88.909-3.345-2.457-8.051-1.74-10.51 1.607-2.458 3.346-1.739 8.051 1.607 10.51 59.612 43.801 95.985 113.185 98.312 186.794h-57.244v-57.343c0-33.225-23.621-61.034-54.952-67.523-12.687-35.975-30.462-66.249-51.568-87.698-4.509-4.582-9.154-8.736-13.91-12.466 17.581 4.758 34.6 11.489 50.636 20.098 3.659 1.963 8.218.59 10.181-3.068 1.964-3.659.59-8.217-3.068-10.181-36.924-19.822-78.736-30.299-120.913-30.299-68.38 0-132.668 26.628-181.019 74.98s-74.981 112.64-74.981 181.02c0 25.956 3.873 51.568 11.51 76.125 1.002 3.222 3.972 5.287 7.178 5.287.739 0 1.492-.11 2.235-.342 3.965-1.233 6.179-5.447 4.946-9.412-6.449-20.735-10.036-42.278-10.706-64.14h57.243v55.699c0 33.003 23.31 60.65 54.327 67.379 12.629 36.481 30.453 67.203 51.706 88.989 4.628 4.743 9.399 9.033 14.288 12.876-68.138-18.626-126.137-66.722-156.199-132.842-1.718-3.778-6.172-5.453-9.956-3.732-3.78 1.718-5.451 6.175-3.732 9.956 20.072 44.149 52.165 81.594 92.809 108.287 41.707 27.392 90.24 41.87 140.351 41.87 68.38 0 132.668-26.629 181.019-74.981s74.981-112.64 74.981-181.019c0-40.849-9.86-81.488-28.511-117.522zm-115.375-16.295h-104.595v-106.757c20.597 2.087 40.795 12.706 58.838 31.039 18.319 18.616 34.017 44.658 45.757 75.718zm-119.633 0h-104.595c11.741-31.064 27.441-57.108 45.764-75.725 18.04-18.329 38.237-28.946 58.831-31.032zm-233.315 126.298c3.319-107.708 77.66-197.831 177.664-225.025-4.751 3.726-9.392 7.877-13.897 12.454-21.111 21.449-38.888 51.726-51.576 87.705-31.33 6.489-54.951 34.298-54.951 67.523v57.343zm72.277 70.736v-128.079c0-29.731 24.188-53.918 53.918-53.918h229.276c29.732 0 53.919 24.188 53.919 53.918v128.079c0 29.731-24.188 53.918-53.919 53.918h-229.276c-29.73.001-53.918-24.187-53.918-53.918zm55.807 68.956h105.231v108.399c-42.296-4.314-81.61-44.769-105.231-108.399zm175.92 100.371c20.675-16.225 39.104-40.467 53.784-71.56 1.773-3.755.165-8.236-3.589-10.009-3.753-1.773-8.236-.166-10.009 3.589-24.283 51.434-58.875 82.319-95.837 86.021v-108.412h107.119c38.023 0 68.956-30.933 68.956-68.955v-55.699h57.24c-3.319 107.707-77.66 197.83-177.664 225.025z"/>
+                        <path d="m253.943 212.393h100.84c-7.94 15.535-19.375 32.347-32.885 48.224-1.26 1.48-2.534 2.938-3.814 4.384-5.979-7.144-11.032-14.331-14.745-21.053-2.006-3.633-6.582-4.956-10.217-2.945-3.634 2.008-4.953 6.582-2.945 10.217 4.411 7.986 10.456 16.496 17.583 24.853-11.969 12.181-24.359 22.587-35.982 30.113-3.486 2.258-4.482 6.913-2.225 10.398 2.272 3.514 6.961 4.463 10.398 2.225 12.339-7.99 25.412-18.918 37.996-31.654.759.767 1.525 1.53 2.299 2.288 12.583 12.324 26.376 22.719 38.839 29.271 3.601 1.915 8.212.555 10.153-3.157 1.933-3.675.519-8.22-3.157-10.153-11.204-5.89-23.745-15.373-35.313-26.703-.849-.832-1.686-1.671-2.515-2.513 1.714-1.916 3.418-3.853 5.096-5.826 16.215-19.055 29.672-39.528 38.146-57.968h15.99c4.153 0 7.519-3.366 7.519-7.519s-3.366-7.519-7.519-7.519h-60.549v-28.657c0-4.153-3.366-7.519-7.519-7.519s-7.519 3.366-7.519 7.519v28.657h-57.957c-4.153 0-7.519 3.366-7.519 7.519s3.368 7.518 7.521 7.518z"/>
+                        <path d="m210.004 297.754 9.464 25.078c1.466 3.885 5.805 5.846 9.689 4.379 3.885-1.466 5.845-5.803 4.379-9.689l-45.371-120.224c-.025-.069-.052-.136-.08-.204-1.592-3.872-5.324-6.372-9.509-6.372-.003 0-.006 0-.009 0-4.189.003-7.922 2.511-9.509 6.388-.023.057-.046.115-.068.172l-45.786 120.219c-1.478 3.88.47 8.223 4.351 9.702 3.779 1.47 8.227-.431 9.702-4.351l9.559-25.098zm-31.449-83.335 25.775 68.298h-51.786z"/>
+                     </g>
+                  </svg>
+               </button>
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link " aria-current="page" href="#">Размещение</a>
+                        <a class="nav-link" href="#">Питание</a>
+                        <a class="nav-link" href="#">Чем заняться</a>
+                        <a class="nav-link" href="#">Галерея</a>
+                        <a class="nav-link" href="#">Контакты</a>
+                    </div>
+                    <button type="button" class="btn btn-primary  btn-lang dnonemobile" data-toggle="modal" data-target="#exampleModal">
+                        <svg id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                           <g>
+                              <path d="m483.489 138.478c-18.047-34.863-44.348-65.608-76.06-88.909-3.345-2.457-8.051-1.74-10.51 1.607-2.458 3.346-1.739 8.051 1.607 10.51 59.612 43.801 95.985 113.185 98.312 186.794h-57.244v-57.343c0-33.225-23.621-61.034-54.952-67.523-12.687-35.975-30.462-66.249-51.568-87.698-4.509-4.582-9.154-8.736-13.91-12.466 17.581 4.758 34.6 11.489 50.636 20.098 3.659 1.963 8.218.59 10.181-3.068 1.964-3.659.59-8.217-3.068-10.181-36.924-19.822-78.736-30.299-120.913-30.299-68.38 0-132.668 26.628-181.019 74.98s-74.981 112.64-74.981 181.02c0 25.956 3.873 51.568 11.51 76.125 1.002 3.222 3.972 5.287 7.178 5.287.739 0 1.492-.11 2.235-.342 3.965-1.233 6.179-5.447 4.946-9.412-6.449-20.735-10.036-42.278-10.706-64.14h57.243v55.699c0 33.003 23.31 60.65 54.327 67.379 12.629 36.481 30.453 67.203 51.706 88.989 4.628 4.743 9.399 9.033 14.288 12.876-68.138-18.626-126.137-66.722-156.199-132.842-1.718-3.778-6.172-5.453-9.956-3.732-3.78 1.718-5.451 6.175-3.732 9.956 20.072 44.149 52.165 81.594 92.809 108.287 41.707 27.392 90.24 41.87 140.351 41.87 68.38 0 132.668-26.629 181.019-74.981s74.981-112.64 74.981-181.019c0-40.849-9.86-81.488-28.511-117.522zm-115.375-16.295h-104.595v-106.757c20.597 2.087 40.795 12.706 58.838 31.039 18.319 18.616 34.017 44.658 45.757 75.718zm-119.633 0h-104.595c11.741-31.064 27.441-57.108 45.764-75.725 18.04-18.329 38.237-28.946 58.831-31.032zm-233.315 126.298c3.319-107.708 77.66-197.831 177.664-225.025-4.751 3.726-9.392 7.877-13.897 12.454-21.111 21.449-38.888 51.726-51.576 87.705-31.33 6.489-54.951 34.298-54.951 67.523v57.343zm72.277 70.736v-128.079c0-29.731 24.188-53.918 53.918-53.918h229.276c29.732 0 53.919 24.188 53.919 53.918v128.079c0 29.731-24.188 53.918-53.919 53.918h-229.276c-29.73.001-53.918-24.187-53.918-53.918zm55.807 68.956h105.231v108.399c-42.296-4.314-81.61-44.769-105.231-108.399zm175.92 100.371c20.675-16.225 39.104-40.467 53.784-71.56 1.773-3.755.165-8.236-3.589-10.009-3.753-1.773-8.236-.166-10.009 3.589-24.283 51.434-58.875 82.319-95.837 86.021v-108.412h107.119c38.023 0 68.956-30.933 68.956-68.955v-55.699h57.24c-3.319 107.707-77.66 197.83-177.664 225.025z"/>
+                              <path d="m253.943 212.393h100.84c-7.94 15.535-19.375 32.347-32.885 48.224-1.26 1.48-2.534 2.938-3.814 4.384-5.979-7.144-11.032-14.331-14.745-21.053-2.006-3.633-6.582-4.956-10.217-2.945-3.634 2.008-4.953 6.582-2.945 10.217 4.411 7.986 10.456 16.496 17.583 24.853-11.969 12.181-24.359 22.587-35.982 30.113-3.486 2.258-4.482 6.913-2.225 10.398 2.272 3.514 6.961 4.463 10.398 2.225 12.339-7.99 25.412-18.918 37.996-31.654.759.767 1.525 1.53 2.299 2.288 12.583 12.324 26.376 22.719 38.839 29.271 3.601 1.915 8.212.555 10.153-3.157 1.933-3.675.519-8.22-3.157-10.153-11.204-5.89-23.745-15.373-35.313-26.703-.849-.832-1.686-1.671-2.515-2.513 1.714-1.916 3.418-3.853 5.096-5.826 16.215-19.055 29.672-39.528 38.146-57.968h15.99c4.153 0 7.519-3.366 7.519-7.519s-3.366-7.519-7.519-7.519h-60.549v-28.657c0-4.153-3.366-7.519-7.519-7.519s-7.519 3.366-7.519 7.519v28.657h-57.957c-4.153 0-7.519 3.366-7.519 7.519s3.368 7.518 7.521 7.518z"/>
+                              <path d="m210.004 297.754 9.464 25.078c1.466 3.885 5.805 5.846 9.689 4.379 3.885-1.466 5.845-5.803 4.379-9.689l-45.371-120.224c-.025-.069-.052-.136-.08-.204-1.592-3.872-5.324-6.372-9.509-6.372-.003 0-.006 0-.009 0-4.189.003-7.922 2.511-9.509 6.388-.023.057-.046.115-.068.172l-45.786 120.219c-1.478 3.88.47 8.223 4.351 9.702 3.779 1.47 8.227-.431 9.702-4.351l9.559-25.098zm-31.449-83.335 25.775 68.298h-51.786z"/>
+                           </g>
+                        </svg>
+                     </button>
+                </div>
+
+
+                <div class="dop-asset ">
+                    <div class="row-line">
+                        <img loading=lazy src="assets/images/call.svg" alt="">
+                        <a href="tel:+371 20372356">+371 20372356</a>
+                    </div>
+                    <div class="row-line">
+                        <img loading=lazy src="assets/images/call.svg" alt="">
+                        <a href="tel:+371 20372356">+371 20372356</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img loading=lazy src="assets/images/heroimage.png" class="img-fluid" alt="heroimage">
+
+        <div class="container-fluid custom-container intro">
+            <div class=" block-style-default">
+                <h1>На самом берегу живописной реки Гауя...</h1>
+                <p class="p-small">
+                    Расположены уютные резиденции, из окон спален которых можно встречать рассветы и провожать закаты… Все резиденции находятся буквально в 10 метрах от воды. Мы предлагаем эгоистично-романтичный отдых в двухместных домиках с террасой, индивидуальной сауной,
+                    горячей купелью, подвесными кресло-качелями и потрясающим видом на реку. ​
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div class="container-fluid custom-container">
+            <h2>Размещение</h2>
+
+            <div class="card-rows">
+                <div class=" block-style-default card">
+                    <div class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-slide-to="0" class="active"></li>
+                            <li data-slide-to="1"></li>
+                            <li data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    <div class="infoblock">
+                        <h2>Meža Rezidense</h2>
+                        <p>В стоимость включены: проживание,сауна, горячая купель и завтрак Завтрак включает в себя свежевыжатый апельсиновый сок, качественный кофе, блинчики, омлет, яичницу, овсяную кашу его Вы выберете для себя по приезду по меню. Домики
+                            оснащены всем необходимым для Вашего отдыха – полотенца, халаты, тапочки, банные принадлежности, фен для волос.</p>
+                    </div>
+                </div>
+                <div class=" block-style-default card">
+                    <div class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-slide-to="0" class="active"></li>
+                            <li data-slide-to="1"></li>
+                            <li data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    <div class="infoblock">
+                        <h2>Meža Rezidense</h2>
+                        <p>В стоимость включены: проживание,сауна, горячая купель и завтрак Завтрак включает в себя свежевыжатый апельсиновый сок, качественный кофе, блинчики, омлет, яичницу, овсяную кашу его Вы выберете для себя по приезду по меню. Домики
+                            оснащены всем необходимым для Вашего отдыха – полотенца, халаты, тапочки, банные принадлежности, фен для волос.</p>
+                    </div>
+                </div>
+                <div class=" block-style-default card">
+                    <div class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-slide-to="0" class="active"></li>
+                            <li data-slide-to="1"></li>
+                            <li data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img loading=lazy src="assets/images/test.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    <div class="infoblock">
+                        <h2>Meža Rezidense</h2>
+                        <p>В стоимость включены: проживание,сауна, горячая купель и завтрак Завтрак включает в себя свежевыжатый апельсиновый сок, качественный кофе, блинчики, омлет, яичницу, овсяную кашу его Вы выберете для себя по приезду по меню. Домики
+                            оснащены всем необходимым для Вашего отдыха – полотенца, халаты, тапочки, банные принадлежности, фен для волос.</p>
+                    </div>
+                </div>
+
+                <div class="block-style-default dark">
+
+                    <div class="infoblock">
+                        <h2>Информация по заезду и выезду</h2>
+                        <p>
+                            Ваш домик будет обязательно готов к 15:00, но Вы, конечно, можете приехать раньше – прогуляться по окрестностям, выпить бокальчик вина или чашечку кофе в оранжерее…
+                        </p>
+                        <p>
+                            Достаточно много времени занимает замена воды и уборка купелей — поэтому просим дать нам возможность начать необходимые работы в 11:00. Конечно, Вы можете наслаждаться завтраком сколько пожелаете… Это время распространяется только на сам домик.
+                        </p>
+                        <p>
+                            Пожалуйста, примите к сведению что мы не размещаем с животными и детками. Здесь не безопасный берег для детей и ничто не предусмотрено для их пребывания. Благодарим за понимание.
+                        </p>
+                        <p>
+                            Так как комплекс расположен в заповедной водоохранной затопляемой зоне – туалеты и душевые размещены отдельно. Однако, пусть Вас это не смущает – в домиках есть горячая и холодная вода, где сауну можно использовать как русскую баню. Не говоря уже о тёплой
+                            ванне под открытым небом с более чем тонной воды…
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2>Чем заняться?</h2>
+
+            <div class="card-rows block-rows">
+                <div class="block-style-default">
+                    <div class="img-block">
+                        <img loading=lazy src="assets/images/card.png" alt="">
+                    </div>
+                    <div class="infoblock">
+                        <p>Сплав по Гауе</p>
+                    </div>
+                </div>
+                <div class="block-style-default">
+                    <div class="img-block">
+                        <img loading=lazy src="assets/images/card.png" alt="">
+                    </div>
+                    <div class="infoblock">
+                        <p>Сплав по Гауе</p>
+                    </div>
+                </div>
+                <div class="block-style-default">
+                    <div class="img-block">
+                        <img loading=lazy src="assets/images/card.png" alt="">
+                    </div>
+                    <div class="infoblock">
+                        <p>Сплав по Гауе</p>
+                    </div>
+                </div>
+                <div class="block-style-default">
+                    <div class="img-block">
+                        <img loading=lazy src="assets/images/card.png" alt="">
+                    </div>
+                    <div class="infoblock">
+                        <p>Сплав по Гауе</p>
+                    </div>
+                </div>
+                <div class="block-style-default">
+                    <div class="img-block">
+                        <img loading=lazy src="assets/images/card.png" alt="">
+                    </div>
+                    <div class="infoblock">
+                        <p>Сплав по Гауе</p>
+                    </div>
+                </div>
+                <div class="block-style-default">
+                    <div class="img-block">
+                        <img loading=lazy src="assets/images/card.png" alt="">
+                    </div>
+                    <div class="infoblock">
+                        <p>Сплав по Гауе</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container-fluid custom-container">
+            <h2 class="withsubhead">Мы работаем круглый год, каждый сезон у нас по-своему прекрасен</h2>
+            <div class="subhead">
+                <p> (Кликните на сезон для просмотра фото)</p>
+            </div>
+        </div>
+
+        <div class="gallery-block">
+            <a href="/simplepage.html" class="vremya">
+                <img loading=lazy src="assets/images/leto.png" alt="" l>
+                <p class="text">
+                    Лето
+                </p>
+            </a>
+            <a href="" class="vremya">
+                <img loading=lazy src="assets/images/osen.png" alt="">
+                <p class="text">
+                    Осень
+                </p>
+            </a>
+            <a href="" class="vremya">
+                <img loading=lazy src="assets/images/zima.png" alt="">
+                <p class="text">Зима</p>
+            </a>
+            <a href="" class="vremya">
+                <img loading=lazy src="assets/images/vesna.png" alt="">
+                <p class="text">Весна</p>
+            </a>
+        </div>
+
+
+        <div class="container-fluid custom-container">
+            <div class="block-style-default dark two-col">
+
+                <div class="infoblock">
+                    <h2>Как добраться?</h2>
+                    <p>
+                        Из центра Риги: около 40 минут (40км) — по Сигулдской трассе до большой развилки/кольца «Sēnīte» на Валмиеру и Сигулду. Навигаторы Waze и Google Maps знают , где мы находимся. Единственное, последние несколько сотен метров, пожалуйста, следуйте дорожным
+                        указателям.
+                    </p>
+
+                </div>
+                <div class="infoblock map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2165.3161998240184!2d24.620919716128288!3d57.13165599227217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e94df839100975%3A0xaab601424244c9b!2sCiti%20Krasti!5e0!3m2!1sru!2sru!4v1601670192922!5m2!1sru!2sru"
+                        width="600" height="318" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+
+            <div class="block-style-default dark ">
+
+                <div class="infoblock">
+
+                    <p>
+                        Адрес: Citi Krasti, Kārļzemnieki, Inčukalna pagasts, LV-2141, Латвия <br> Телефон: +371 20372356, +371 24001871 <br>Email: strelicia127@gmail.com
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade darkmode" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Выбор языка</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="launguage-pack">
+                        <a href="" class="ru block-style-default">
+                            <img loading=lazy src="assets/images/russia.svg" alt="">
+                            <p>Русский</p>
+                        </a>
+                        <a href="" class="en block-style-default">
+                            <img loading=lazy src="assets/images/united-kingdom.svg" alt="">
+                            <p>English</p>
+                        </a>
+                        <a href="" class="lv block-style-default">
+                            <img loading=lazy src="assets/images/latvia.svg" alt="">
+                            <p>Latvietis</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
